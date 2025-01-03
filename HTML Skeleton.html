@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wine Tasting- My hobby</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      .Content {
+        padding: 10px 30px;
+        max-width: 600px;
+        border-radius: 20px;
+        display: block;
+        margin: 20px auto;
+        background: #f76b8a;
+      }
+      .Waterford {
+        transition: all 150ms ease-in-out;
+        border-radius: 8px;
+      }
+      .Waterford:hover {
+        transform: scale(1.1);
+        filter: grayscale(1.5);
+      }
+
+      body {
+        background: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 8px;
+        transition: all 100ms ease-in-out;
+      }
+      img:hover {
+        transform: scale(1.3);
+        cursor: pointer;
+      }
+      footer {
+        text-align: center;
+        font-size: 20px;
+        margin: 10px auto;
+      }
+      button {
+        display: block;
+        font-size: 15px;
+        margin: 15px auto;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 15px;
+        background: white;
+        transition: all 150ms ease-in-out;
+        border: 2px solid black;
+      }
+      button:hover {
+        background: #ff0844;
+      }
+      .dark {
+        font-size: 15px;
+        background: rgb(20, 19, 19);
+        color: white;
+        transition: all 150ms ease-in-out;
+      }
+      .dark:hover {
+        background: white;
+        color: black;
+      }
+      a {
+        color: black;
+        transition: all 100ms ease-in-out;
+      }
+      a:hover {
+        color: white;
+      }
+      p {
+        font-size: 17px;
+        line-height: 20px;
+      }
+      .images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      }
+
+      .darker {
+        background: linear-gradient(
+          115deg,
+          rgb(50, 3, 3) 5.8%,
+          rgb(75, 10, 10) 112.6%
+        );
+        color: white;
+      }
+      .darker .Content {
+        background: #7e1212;
+        color: white;
+      }
+      .darker a {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="dark">Dark Theme</button>
+    <div class="Content">
+      <h1>Wine Tasting</h1>
+      <a href="https://www.waterfordestate.co.za/" target="_blank">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/502/original/22347063884_c3635b2a4a_b.jpg?1726348412"
+          alt="Waterford Estate Wine Farm"
+          class="Waterford"
+        />
+      </a>
+      <p>
+        A wine tasting is a set time for consumers to visit a winery and try out
+        some locally fermented drinks. The goal for the winery or store is to
+        allow individuals to engage with various wines to potentially generate a
+        sale. A wine tasting is the best way to discover what you enjoy and what
+        you do not. You have the freedom to try wines with an array of
+        backgrounds without committing to an entire bottle.
+      </p>
+      <a href="https://en.wikipedia.org/wiki/Wine_tasting" target="_blank"
+        >Read more on wikipedia</a
+      >💡
+      <br />
+      <h2>Wine Farms in Stellenbosch</h2>
+      <span class="images">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/596/original/blog_Vergelegen-Wine-Estate.png?1726428435"
+          alt="Vergelegen Wine Estate"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/498/original/lanzerac-hotel-spa.jpg?1726347818"
+          alt="Lanzerac Wine Estate"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/500/original/unnamed.jpg?1726348020"
+          alt="Rust En Vrede Wine Farm"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/143/501/original/1._Blaauwklippen_Manor_House.jpg?1726348156"
+          alt="Blaauwklippen Wine Farm"
+        />
+      </span>
+      <button class="booking">Book a Wine Tasting</button>
+    </div>
+    <footer>Coded by Siyamthanda Ntshebetu 🍷</footer>
+    <script>
+      function changeTheme() {
+        let organs = document.querySelector("body");
+        organs.classList.toggle("darker");
+      }
+      let darkButton = document.querySelector(".dark");
+      darkButton.addEventListener("click", changeTheme);
+      function tryWine() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email address?");
+        let wine = prompt("What is your favourite wine to drink?");
+        if (name === "" || email === "" || wine === "") {
+          alert("No wine for you 🥱");
+        } else {
+          alert(
+            "Hello " +
+              name +
+              " 😎" +
+              ", We'll send you a list of wine farms to explore!"
+          );
+        }
+      }
+      let book = document.querySelector(".booking");
+      book.addEventListener("click", tryWine);
+    </script>
+  </body>
+</html>
